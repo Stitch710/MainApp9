@@ -1,0 +1,34 @@
+﻿<Window x:Class="MainApp9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApp9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="4">
+            <MenuItem ToolTip="меню программы" Header="Программа" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81" Height="26">
+                <MenuItem x:Name="info" Header="О программе" ToolTip="имя студента и задание" Click="info_Click" />
+                <MenuItem x:Name="exit" Header="Выйти" ToolTip="выйти и закрыть программу" Click="exit_Click"/>
+            </MenuItem>
+        </Menu>
+        <Button Content="Показать литературу" HorizontalAlignment="Left" Margin="28,375,0,0" VerticalAlignment="Top" Height="33" Width="131" Click="Button_Click"/>
+        <DataGrid x:Name="Tablitsa" Margin="28,48,313,122">
+
+            <!-- Названия Столбцов и их Бинды -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="150" />
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="100"/>
+                <DataGridTextColumn Header="Издатель" Binding="{Binding Copyright}" Width="130"/>
+                <DataGridTextColumn Header="Страниц" Binding="{Binding Lists}" Width="*"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <TextBox x:Name="Search" HorizontalAlignment="Left" Margin="258,375,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Height="33"/>
+        <TextBlock HorizontalAlignment="Left" Margin="258,354,0,0" TextWrapping="Wrap" Text="Поиск по издателю" VerticalAlignment="Top"/>
+        <Button Content="Найти" HorizontalAlignment="Left" Margin="437,378,0,0" VerticalAlignment="Top" Height="26" Width="50" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
